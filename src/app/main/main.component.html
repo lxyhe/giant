@@ -1,0 +1,42 @@
+<div class="c-content-inner">
+<div class="row">
+	<div class="col-md-10"></div>
+	<div class="col-md-2">
+		<button class="btn btn-success" (click)='enter()'>welcome</button>
+	</div>
+</div>
+	<ngb-tabset>
+  <ngb-tab title="百分比图">
+    <ng-template ngbTabContent>
+     <div class="row">
+		<div class="col-md-6 con_echarts" >
+			<h5> Theme: default </h5>
+			<div echarts [options]="options" class="demo-chart"></div>
+		</div>
+		<div class="col-md-6 con_echarts">
+			<h5> Theme: macarons </h5>
+			<div echarts [options]="options" theme="macarons" class="demo-chart"></div>
+		</div>
+	</div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle><b>柱状</b> 图</ng-template>
+    <ng-template ngbTabContent>
+    	<div echarts [options]="optionsSecond" class="demo-chart"></div>
+    </ng-template>
+  </ngb-tab>
+    <ngb-tab>
+    <ng-template ngbTabTitle><b>树状</b> 图</ng-template>
+    <ng-template ngbTabContent>
+
+		<div echarts [options]="optionsTree" [merge]="mergeData" style="height: 600px;"></div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Disabled" [disabled]="true">
+    <ng-template ngbTabContent>
+      <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
+</div>

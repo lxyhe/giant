@@ -1,0 +1,31 @@
+<div class="c-content-inner">
+	<div class="row">
+		<div class="col-md-6  search">
+			
+
+		</div>
+		<div class="col-md-6 search">
+			<label for="typeahead-focus">搜索组件:</label>
+			<input type="text" 
+			  id="typeahead-focus"
+			 
+			  class="form-control"
+			  [(ngModel)]='model'
+			  [ngbTypeahead]="search"
+			  (focus)="focus$.next($event.target.value)"
+			  (click)="click$.next($event.target.value)"
+			  #instance="ngbTypeahead"
+			  (keyup.blur)="up()"
+			/>
+			<hr>
+			<pre>Model: {{ model }}</pre>
+			<!-- <button class="btn btn-success btn-sm">组件搜索</button> -->
+		</div>
+	</div>
+	
+	<div class="c-content-wrapper" style="background:#FFF;">
+        <div class="c-content" >
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+</div>
